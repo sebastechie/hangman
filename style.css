@@ -21,7 +21,7 @@
 }
 
 .main .container {
-  background-color: yellow;
+  background-color: aqua;
   height: 80%;
   width: 80%;
   border: 2px solid black;
@@ -64,5 +64,11 @@
   border: 2px solid red;
   height: 80%;
   width: 100%;
+}
+
+.main .container .letters .result {
+  border: 2px solid orange;
+  height: 100px;
+  width: 300px;
 }
 /*# sourceMappingURL=style.css.map */

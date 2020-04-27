@@ -1,5 +1,6 @@
 
-const words = ["apple", "watermelon", "kiwi", "a"]
+const words = ["hangman"]
+// const words = ["apple", "watermelon", "kiwi", "a"]
 
 let randomWordPicker = Math.floor(Math.random() * words.length);
 let selectedWord = words[randomWordPicker];
@@ -8,6 +9,10 @@ console.log(selectedWord);
 
 let charMatching = [];
 let notMatching = [];
+
+
+let resultOutput = document.getElementsByClassName('result')
+let wrongMatch = document.getElementsByClassName('errors')
 
 
 let generateUnderscoreLength = () => {
@@ -20,14 +25,22 @@ console.log(generateUnderscoreLength());
 
 
 document.addEventListener('keypress', (event) => {
-    let keycode = event.keyCode;
-    let keyword = String.fromCharCode(event.keyCode);
-    
-    if (selectedWord.indexOf(keyword) > -1) {
-        charMatching.push(keyword);
+    let typedLetter = String.fromCharCode(event.keyCode);
+
+    if (selectedWord.indexOf(typedLetter) > -1) {
+        charMatching.push(typedLetter);
+        underscoreLength[selectedWord.indexOf(typedLetter)] = typedLetter;
+        resultOutput[0].innerHTML = underscoreLength.join(' ');
+
+        if (underscoreLength.join('') == selectedWord) {
+            alert("YOU WIN!!!");
+        }
+
         console.log(charMatching);
     } else {
-        notMatching.push(keyword);
+        notMatching.push(typedLetter);
+        wrongMatch[0].innerHTML = notMatching;
+        wrongMatch[0].innerHTML = `used: ${notMatching}`;
         console.log(notMatching);
     }
 });
