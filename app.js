@@ -30,7 +30,7 @@ document.addEventListener('keypress', (event) => {
     if (selectedWord.indexOf(typedLetter) > -1) {
         charMatching.push(typedLetter);
         underscoreLength[selectedWord.indexOf(typedLetter)] = typedLetter;
-        resultOutput[0].innerHTML = underscoreLength.join(' ');
+        resultOutput[0].innerHTML = `Word: ${underscoreLength.join(' ')}`;
 
         if (underscoreLength.join('') == selectedWord) {
             alert("YOU WIN!!!");
@@ -40,7 +40,7 @@ document.addEventListener('keypress', (event) => {
     } else {
         notMatching.push(typedLetter);
         wrongMatch[0].innerHTML = notMatching;
-        wrongMatch[0].innerHTML = `used: ${notMatching}`;
+        wrongMatch[0].innerHTML = `Used letters: ${notMatching}`;
         console.log(notMatching);
     }
 });

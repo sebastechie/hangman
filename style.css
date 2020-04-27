@@ -6,7 +6,6 @@
 }
 
 .main {
-  border: 2px solid red;
   height: 100vh;
   width: 100vw;
   display: -webkit-box;
@@ -20,55 +19,57 @@
           justify-content: center;
 }
 
-.main .container {
-  background-color: aqua;
-  height: 80%;
-  width: 80%;
-  border: 2px solid black;
+.main .container, .main .title, .main .letters, .main .result, .main .errors {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .container {
+  height: 80%;
+  width: 80%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: lightblue;
 }
 
 .main .container .title {
   height: 20%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 90%;
+  font-size: 35px;
+  border-bottom: 0.5px solid black;
 }
 
 .main .container .letters {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 2px solid red;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   height: 80%;
   width: 100%;
 }
 
-.main .container .letters .result {
-  border: 2px solid orange;
+.main .container .letters .result, .main .container .letters .errors {
+  border: 0.5px solid grey;
   height: 100px;
   width: 300px;
+}
+
+.main .container .letters .errors {
+  border: none;
+  border-bottom: 0.5px solid red;
+  height: 50px;
+  color: red;
 }
 /*# sourceMappingURL=style.css.map */
